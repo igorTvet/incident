@@ -17,14 +17,20 @@ export function Counter() {
   const [incrementAmount, setIncrementAmount] = useState('2');
 
   const incrementValue = Number(incrementAmount) || 0;
-
+  const decr = () => {
+    if (count === 0) {
+      return;
+    } else {
+      dispatch(decrement())
+    }
+  }
   return (
     <div>
       <div className={styles.row}>
         <button
           className={styles.button}
           aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
+          onClick={decr}
         >
           -
         </button>
